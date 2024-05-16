@@ -5,13 +5,13 @@ CCFLAGS = -Wall -Wextra -std=c++17 -O0 -lm
 
 .PHONY: build clean
 
-build: numarare p2 p3 p4
+build: numarare trenuri p3 p4
 
 # Nu compilați aici, nici măcar ca dependențe de reguli.
 run-p1:
 	./numarare
 run-p2:
-	./p2
+	./trenuri
 run-p3:
 	./p3
 run-p4:
@@ -20,7 +20,7 @@ run-p4:
 # Schimbați numele surselor (și, eventual, ale executabilelor - peste tot).
 p1: numarare.cpp
 	$(CC) -o $@ $^ $(CCFLAGS)
-p2: p2.cpp
+p2: trenuri.cpp
 	$(CC) -o $@ $^ $(CCFLAGS)
 p3: p3.cpp
 	$(CC) -o $@ $^ $(CCFLAGS)
@@ -29,4 +29,4 @@ p4: p4.cpp
 
 # Vom șterge executabilele.
 clean:
-	rm -f numarare p2 p3 p4
+	rm -f numarare trenuri p3 p4
